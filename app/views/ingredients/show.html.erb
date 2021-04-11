@@ -1,0 +1,14 @@
+<h2>Ingredient</h2>
+
+<%= @ingredient.name %><br><br>
+
+<% if @ingredient.recipes.any? %>
+<p>Here are the recipes this ingredient is used in:</p>
+<ul>    
+<% @ingredient.recipes.each do |r| %>
+        <li><%= link_to r.name, r %></li>
+    <% end %>
+</ul>
+<% else %>
+<p>This ingredient is not currently used in any recipes.</p>
+<% end %>
